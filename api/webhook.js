@@ -1,6 +1,8 @@
 import { google } from "googleapis";
 
-const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+// const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS);
+const credentials = JSON.parse(process.env.GOOGLE_CREDENTIALS.replace(/\\n/g, "\n"));
+
 const { client_email, private_key } = credentials;
 
 const auth = new google.auth.JWT(
